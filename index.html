@@ -212,7 +212,7 @@
       <script src="javascripts/all-c5541673.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;http&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -222,10 +222,8 @@
     <div class="toc-wrapper">
       <img src="images/logo-ff82000a.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="shell">cURL</a>
+              <a href="#" data-language-name="http">http</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -233,22 +231,56 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
-          </li>
-          <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting Started">Getting Started</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#introduction" class="toc-h2 toc-link" data-title="Introduction">Introduction</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#api-reference" class="toc-h2 toc-link" data-title="API Reference">API Reference</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#what-is-a-rest-api" class="toc-h2 toc-link" data-title="What is a REST API?">What is a REST API?</a>
+                  </li>
+                  <li>
+                    <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#juvonno-resources" class="toc-h1 toc-link" data-title="Juvonno Resources">Juvonno Resources</a>
+          </li>
+          <li>
+            <a href="#crud-operations" class="toc-h1 toc-link" data-title="CRUD Operations">CRUD Operations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-new-resource" class="toc-h2 toc-link" data-title="Create a new Resource">Create a new Resource</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-an-existing-resource" class="toc-h2 toc-link" data-title="Retrieve an existing Resource">Retrieve an existing Resource</a>
+                  </li>
+                  <li>
+                    <a href="#update-an-existing-resource" class="toc-h2 toc-link" data-title="Update an existing Resource">Update an existing Resource</a>
+                  </li>
+                  <li>
+                    <a href="#delete-an-existing-resource" class="toc-h2 toc-link" data-title="Delete an existing Resource">Delete an existing Resource</a>
+                  </li>
+                  <li>
+                    <a href="#flexible-parameters" class="toc-h2 toc-link" data-title="Flexible Parameters">Flexible Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#customers" class="toc-h1 toc-link" data-title="Customers">Customers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-new-customer" class="toc-h2 toc-link" data-title="Create a new Customer">Create a new Customer</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-a-customer-using-juvonno-id" class="toc-h2 toc-link" data-title="Retrieve a Customer using Juvonno ID">Retrieve a Customer using Juvonno ID</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-a-customer-using-chart-num" class="toc-h2 toc-link" data-title="Retrieve a Customer using Chart Num">Retrieve a Customer using Chart Num</a>
                   </li>
               </ul>
           </li>
@@ -257,141 +289,389 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://app.swaggerhub.com/apis-docs/globaloffice/juvonno/2.0.1#/'>Swaggerhub's API Reference</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id='getting-started'>Getting Started</h1><h2 id='introduction'>Introduction</h2>
+<p>Juvonno API is a collection of RESTful endpoints, which communicate directly with our back-end Business Objects, thus allowing users to Create, Read, Update &amp; Delete (CRUD) the corresponding resources. </p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>Juvonno API has strict validations and will throw detailed messages upon encountering any errors, thus enabling developers with better integration to our Juvonno App. </p>
 
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
+<aside class="warning">
+This guide is currently in development.
+</aside>
+<h2 id='api-reference'>API Reference</h2>
+<p>This document will serve as a guideline &amp; an introduction to our Juvonno API &amp; our business logic.</p>
+
+<p>For detailed API Document of all of our available Endpoints, please use this <a href="https://app.swaggerhub.com/apis-docs/globaloffice/juvonno/2.0.1">reference here in Swaggerhub</a>. </p>
+<h2 id='what-is-a-rest-api'>What is a REST API?</h2>
+<p>API stands for &quot;Application Programming Interface&quot;. It&#39;s a set of rules that enables various programs to talk to each other, regardless of the programming languages they were written in.</p>
+
+<p>The programs talk to each other through a set of predefined URLs which can be accessed via HTTP Protocol.</p>
+
+<p>These URLs represent various <strong>resources</strong>. A Resource represents a <strong>Juvonno Business Object</strong>, such as an <strong>Appointment</strong>, a <strong>Customer</strong>, or a <strong>Staff Member</strong>, etc. Resources will be returned in JSON format.</p>
+
+<p>We utilize various HTTP Methods to perform different operations on a resource:
+    - GET: to retrieve a resource (or sometimes a list of resources)
+    - POST: to create a new resource 
+    - PUT: to update an existing resource
+    - DELETE: to delete an existing resource    </p>
+<h2 id='authentication'>Authentication</h2>
+<p>Juvonno uses API keys to allow access to the API. You can register a new API key under your own profile in your Juvonno App.</p>
+
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>Always append your api key using the query parameter &quot;api_key&quot; to your HTTP Request:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://tenant-id.juvonno.com/
+api/{RESOURCES}?api_key={YOUR_API_KEY}"</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="err">POST "https://tenant-id.juvonno.com/api/{RESOURCES}?api_key={YOUR_API_KEY}"
+</span></code></pre></div>
+<p>API key must be included in all API requests to the server as a <em>query parameter</em> called <strong>&quot;api_key&quot;</strong> that looks like the following:</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+<p><code>https://tenant-id.juvonno.com/api/{RESOURCES}?api_key=fhOkwr12kfslsdqwe8</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>fhOkwr12kfslsdqwe8</code> with your personal API key.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='juvonno-resources'>Juvonno Resources</h1>
+<p>Each Resource represents an actual Juvonno Business Object, which can be accessed through a collection of URLs.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>For example, /api/customers is the URL responsible for all operations on the &quot;Customer Resource&quot;, which in turn is a &quot;Customer Object&quot; in our backend server.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<p>Each object / resource will always have a unique <strong>Juvonno ID</strong>. It is up to users to choose to store our IDs into their application.  </p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+<blockquote>
+<p>An example Customer Resource:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"num"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"chart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHART1234"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Sometimes we also allow an additional field which users can use to match up against their own IDs in their system. 
+For example, the Customer Resource on the right has a <strong>Juvonno ID</strong> of <strong>21</strong> and an additional identifier <strong>chart &gt; num</strong> of <strong>&quot;CHART1234&quot;</strong> (which can represent the Customer&#39;s ID in your system).</p>
+
+<p>It is not always the case that we provide an additional mapping field. One example is the &quot;Appointment&quot; Resource. &quot;Appointment&quot; does not have a &quot;number&quot; or a &quot;name&quot;. The only way to distinguish between unique appointments in Juvonno is based on theirs Juvonno ID.
+Hence in some cases it relies totally on the Juvonno ID in order for a resource to be able to get retrieved or modified. Therefore, though it is not mandatory, but we do <strong>recommend storing this ID field into your own system</strong>.</p>
+<h1 id='crud-operations'>CRUD Operations</h1>
+<p>We follow standard RESTful CRUD operations. There will be a corresponding<br>
+  <code>/api/ { RESOURCES - NAME }</code><br>
+collection of CRUD operations per Juvonno Object.
+<aside class="notice">
+CRUD stands for &quot;Create&quot;, &quot;Retrieve&quot;, &quot;Update&quot; and &quot;Delete&quot;
+</aside></p>
+<h2 id='create-a-new-resource'>Create a new Resource</h2>
+<p>Always use <strong>POST</strong> to create a new resource.</p>
+
+<p><code>POST https://tenant-id.juvonno.com/api/{RESOURCES}/</code></p>
+
+<blockquote>
+<p>Create a new Customer: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="err">POST https://tenant-id.juvonno.com/api/customers?api_key={YOUR_API_KEY}
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>cURL <span class="nt">-X</span> POST <span class="s2">"https://tenant-id.juvonno.com/api/customers
+?api_key={YOUR_API_KEY}"</span>
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Example Request Body</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"chart_num"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHART1234"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>api_key</td>
+<td>Always include your api_key in all of your requests.</td>
 </tr>
 </tbody></table>
+<h3 id='request-body'>Request Body</h3>
+<ul>
+<li>application/json</li>
+<li>application/x-www-form-urlencoded</li>
+</ul>
+<h2 id='retrieve-an-existing-resource'>Retrieve an existing Resource</h2>
+<p>Always use <strong>GET</strong> to retrieve a resource.</p>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p><code>GET https://tenant-id.juvonno.com/api/{RESOURCES}/{RESOURCE_JUVONNO_ID}</code></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<blockquote>
+<p>Get a customer who has a Juvonno ID of 21: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="err">GET https://tenant-id.juvonno.com/api/customers/21?api_key={YOUR_API_KEY}
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>cURL <span class="nt">-X</span> GET <span class="s2">"https://tenant-id.juvonno.com/api/customers/21
+?api_key={YOUR_API_KEY}"</span>
+</code></pre></div><h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>Always include your api_key in all of your requests.</td>
+</tr>
+</tbody></table>
+<h2 id='update-an-existing-resource'>Update an existing Resource</h2>
+<p>Always use <strong>PUT</strong> to update an existing resource.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<p><code>PUT https://tenant-id.juvonno.com/api/{RESOURCES}/{RESOURCE_JUVONNO_ID}</code></p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<blockquote>
+<p>Update a customer who has a Juvonno ID of 21 with new phone number: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="err">PUT https://tenant-id.juvonno.com/api/customers/21?api_key={YOUR_API_KEY}
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>cURL <span class="nt">-X</span> PUT <span class="s2">"https://tenant-id.juvonno.com/api/customers/21
+?api_key={YOUR_API_KEY}"</span>
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Request Body</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-431-123-1234"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>Always include your api_key in all of your requests.</td>
+</tr>
+</tbody></table>
+<h3 id='request-body-2'>Request Body</h3>
+<ul>
+<li>application/json</li>
+<li>application/x-www-form-urlencoded</li>
+</ul>
+<h2 id='delete-an-existing-resource'>Delete an existing Resource</h2>
+<p>Always use <strong>DELETE</strong> to delete a resource.</p>
+
+<p><code>DELETE https://tenant-id.juvonno.com/api/{RESOURCES}/{RESOURCE_JUVONNO_ID}</code></p>
+
+<blockquote>
+<p>Delete a customer who has a Juvonno ID of 21: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="err">DELETE https://tenant-id.juvonno.com/api/customers/21?api_key={YOUR_API_KEY}
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>cURL <span class="nt">-X</span> DELETE <span class="s2">"https://tenant-id.juvonno.com/api/customers/21
+?api_key={YOUR_API_KEY}"</span>
+</code></pre></div><h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>Always include your api_key in all of your requests.</td>
+</tr>
+</tbody></table>
+<h2 id='flexible-parameters'>Flexible Parameters</h2>
+<p>Sometimes an object can be accessed using different identifiers, Juvonno API provides the users with the flexibility of using other identifiers besides our main <strong>&quot;Juvonno ID&quot;</strong> to perform operations on the resource.</p>
+
+<p><strong>Example Scenario:</strong></p>
+
+<p>You want to create a new Staff and assign your staff to a clinic location called &quot;Brandon Clinic&quot;.</p>
+
+<p>A Clinic is represented by a &quot;Branch Resource&quot; in our API. A Branch can be identified by either its:</p>
+
+<ul>
+<li>Branch&#39;s Juvonno ID</li>
+<li>Branch&#39;s code</li>
+<li>Branch&#39;s name</li>
+</ul>
+
+<p>In the request body, you can supply either parameter &quot;branch_id&quot;, &quot;branch_code&quot; or &quot;branch_name&quot;. Juvonno will try to map the branch to the staff based on the parameter your provided. Only one parameter needs to be supplied, although you can supply as many as you wish.</p>
+
+<p>In case you have supplied more than one parameter (for example “branch_id” and “branch_name”), and if Juvonno has found a match with the first parameter, it will ignore and won’t map the second parameter provided. Mapping priority is in this exact order:  </p>
+
+<p><code>Branch_id  &gt; Branch_code &gt; Branch_name</code></p>
+
+<p>If your application has two branches with the same name “Brandon Clinic”, Juvonno API will return an Error with a detailed message asking you to supply a unique &quot;branch_name&quot; or use &quot;branch_id&quot; (Juvonno ID) instead. </p>
+
+<p>If your application has no branches with the name “Brandon Clinic”, Juvonno API will return an Error telling you that it was unable to find any record with such name. </p>
+<h1 id='customers'>Customers</h1>
+<p><strong>Endpoint:</strong></p>
+
+<p><code>/api/customers</code></p>
+
+<p>A Customer represents a &quot;Patient&quot;. You can create a new customer, retrieve or modify an existing customer using its <strong>Juvonno ID</strong> or its <strong>Chart Num</strong>. </p>
+
+<p>Only <strong>Juvonno ID</strong> is treated as a unique identifier in our system. If you&#39;re querying using <strong>Chart Num</strong>, you must supply a unique existing number or else the program will throw corresponding error codes. </p>
+<h2 id='create-a-new-customer'>Create a new Customer</h2><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://tenant-id.juvonno.com/api/customers</code></p>
+
+<blockquote>
+<p>Create a new Customer: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="err">POST https://tenant-id.juvonno.com/api/customers?api_key={YOUR_API_KEY}
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>cURL <span class="nt">-X</span> POST <span class="s2">"https://tenant-id.juvonno.com/api/customers
+?api_key={YOUR_API_KEY}"</span>
+</code></pre></div>
+<blockquote>
+<p>Example Request Body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"chart_num"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHART1234"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1989-12-01"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="w">   
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"num"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"chart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHART1234"</span><span class="w">     
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1989-12-01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">                 
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint creates a new customer.</p>
+<h3 id='query-parameters-5'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>Always include your api_key in all of your requests.</td>
+</tr>
+</tbody></table>
+<h3 id='request-body-3'>Request Body</h3>
+<ul>
+<li>application/json</li>
+<li>application/x-www-form-urlencoded</li>
+</ul>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>first_name</td>
+<td>Y</td>
+<td>Customer&#39;s first name</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>Y</td>
+<td>Customer&#39;s last name</td>
+</tr>
+<tr>
+<td>date_of_birth</td>
+<td>Y</td>
+<td>Customer&#39;s DOB</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>Y</td>
+<td>Must be one of &quot;male&quot;, &quot;female&quot;, &quot;private&quot; or &quot;unknown&quot;</td>
+</tr>
+<tr>
+<td>chart_num</td>
+<td>N</td>
+<td>This can be used to match against your own customer&#39;s ID</td>
+</tr>
+<tr>
+<td>preferred_language</td>
+<td>N</td>
+<td>Must be one of &quot;english&quot; or &quot;french&quot;</td>
+</tr>
+<tr>
+<td>status</td>
+<td>N</td>
+<td>Must be one of &quot;active&quot;, &quot;inactive&quot;, &quot;discharged&quot; or &quot;deleted&quot;</td>
+</tr>
+<tr>
+<td>branch_id</td>
+<td>N</td>
+<td>You can use either &quot;branch_id&quot;, &quot;branch_code&quot; or &quot;branch_name&quot;</td>
+</tr>
+<tr>
+<td>branch_code</td>
+<td>N</td>
+<td>You can use either &quot;branch_id&quot;, &quot;branch_code&quot; or &quot;branch_name&quot;</td>
+</tr>
+<tr>
+<td>branch_name</td>
+<td>N</td>
+<td>You can use either &quot;branch_id&quot;, &quot;branch_code&quot; or &quot;branch_name&quot;</td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-a-customer-using-juvonno-id'>Retrieve a Customer using Juvonno ID</h2><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://tenant-id.juvonno.com/api/customers/{customerId}</code></p>
+
+<blockquote>
+<p>Retrieve a customer who has a Juvonno ID of 21: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="err">GET https://tenant-id.juvonno.com/api/customers/21?api_key={YOUR_API_KEY}
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>cURL <span class="nt">-X</span> GET <span class="s2">"https://tenant-id.juvonno.com/api/customers/21
+?api_key={YOUR_API_KEY}"</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"num"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"chart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHART1234"</span><span class="w">     
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1989-12-01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">                 
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='query-parameters-6'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>Always include your api_key in all of your requests.</td>
+</tr>
+</tbody></table>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -400,37 +680,48 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>customerID</td>
+<td>The Juvonno ID of the customer to be retrieved</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='retrieve-a-customer-using-chart-num'>Retrieve a Customer using Chart Num</h2><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://tenant-id.juvonno.com/api/customers/chart/{number}</code></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="nt">-X</span> DELETE
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<blockquote>
+<p>Retrieve a customer who has a Chart Num of &quot;CHART1234&quot;: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="err">GET https://tenant-id.juvonno.com/api/customers/chart/CHART1234?api_key={YOUR_API_KEY}
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>cURL <span class="nt">-X</span> GET <span class="s2">"https://tenant-id.juvonno.com/api/customers/chart/CHART1234
+?api_key={YOUR_API_KEY}"</span>
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Example Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+  </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"num"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"chart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHART1234"</span><span class="w">     
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1989-12-01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">                 
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
+</span></code></pre></div><h3 id='query-parameters-7'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>Always include your api_key in all of your requests.</td>
+</tr>
+</tbody></table>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -439,16 +730,16 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>number</td>
+<td>The chart number of the customer to be retrieved</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+<aside class="warning">
+This error section will be updated frequently.
 </aside>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>Juvonno API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -466,31 +757,15 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- Your do not have enough permission to access this resource.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>Not Found -- The specified resource could not be found.</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>Method Not Allowed -- You tried to access a resource with an invalid method.</td>
 </tr>
 <tr>
 <td>500</td>
@@ -505,10 +780,8 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="shell">cURL</a>
+                <a href="#" data-language-name="http">http</a>
           </div>
       </div>
     </div>
