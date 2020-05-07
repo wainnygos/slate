@@ -41,10 +41,10 @@ These URLs represent various **resources**. A Resource represents a **Juvonno Bu
 
 We utilize various HTTP Methods to perform different operations on a resource:
 
-    - GET: to retrieve a resource (or sometimes a list of resources)
-    - POST: to create a new resource 
-    - PUT: to update an existing resource
-    - DELETE: to delete an existing resource    
+- GET: to retrieve a resource (or sometimes a list of resources)
+- POST: to create a new resource 
+- PUT: to update an existing resource
+- DELETE: to delete an existing resource    
 
 ## Authentication
 
