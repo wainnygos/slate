@@ -40,6 +40,7 @@ The programs talk to each other through a set of predefined URLs which can be ac
 These URLs represent various **resources**. A Resource represents a **Juvonno Business Object**, such as an **Appointment**, a **Customer**, or a **Staff Member**, etc. Resources will be returned in JSON format.
 
 We utilize various HTTP Methods to perform different operations on a resource:
+
     - GET: to retrieve a resource (or sometimes a list of resources)
     - POST: to create a new resource 
     - PUT: to update an existing resource
